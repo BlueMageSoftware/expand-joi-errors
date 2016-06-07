@@ -13,6 +13,15 @@ describe('Errors Mapper', () => {
     exampleData = Object.assign({}, jsonData);
   });
 
+  it('should return error object if null or undefined', (done) => {
+    let output = errorHandler(null);
+    expect(output).to.be.null();
+
+    output = errorHandler(undefined);
+    expect(output).to.be.undefined();
+    done();
+  });
+
   it('should return error object as raw if isJoi flag is not found.', (done) => {
     delete exampleData.isJoi;
     const output = errorHandler(exampleData);

@@ -1,5 +1,9 @@
+function ignoreError(error) {
+  return (!error || (error && !error.isJoi));
+}
+
 module.exports = function mapErrors(error) {
-  if (error && !error.isJoi) {
+  if (ignoreError(error)) {
     return error;
   }
 
@@ -9,6 +13,7 @@ module.exports = function mapErrors(error) {
     recent find. If needed, we can override this but I would prefer to only project one
     error.
   */
+  // console.log(error);
   const response = {
     isJoi: true,
     valid: false,
