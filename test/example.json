@@ -1,0 +1,58 @@
+{
+	"name": "ValidationError",
+	"isJoi": true,
+	"details": [{
+		"message": "\"Handle\" is not allowed to be empty",
+		"path": "form.handle",
+		"type": "any.empty",
+		"context": {
+			"key": "Handle"
+		}
+	}, {
+		"message": "\"Handle\" must only contain alpha-numeric characters",
+		"path": "form.handle",
+		"type": "string.alphanum",
+		"context": {
+			"value": "",
+			"key": "Username"
+		}
+	}, {
+		"message": "\"Email address\" is not allowed to be empty",
+		"path": "form.email",
+		"type": "any.empty",
+		"context": {
+			"key": "Email address"
+		}
+	}, {
+		"message": "\"Email address\" must be a valid email",
+		"path": "form.email",
+		"type": "string.email",
+		"context": {
+			"value": "",
+			"key": "Email address"
+		}
+	}, {
+		"message": "\"Password\" is not allowed to be empty",
+		"path": "form.password",
+		"type": "any.empty",
+		"context": {
+			"key": "Password"
+		}
+	}, {
+		"message": "\"Password\" length must be at least 6 characters long",
+		"path": "form.password",
+		"type": "string.min",
+		"context": {
+			"limit": 8,
+			"value": "",
+			"key": "Password"
+		}
+	}],
+	"_object": {
+		"form": {
+			"handle": "",
+			"email": "",
+			"password": ""
+		}
+	}
+}
